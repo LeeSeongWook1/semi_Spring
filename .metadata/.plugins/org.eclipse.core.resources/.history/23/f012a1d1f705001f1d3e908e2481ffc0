@@ -1,0 +1,32 @@
+package com.kh.Asihana.member.model.service;
+
+import com.kh.Asihana.member.model.vo.Member;
+
+public class MemberServiceImpl implements MemberService {
+
+	@Override
+	public Member login(Member member) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int insert(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}

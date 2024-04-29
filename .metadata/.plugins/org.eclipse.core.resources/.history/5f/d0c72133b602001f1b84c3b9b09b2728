@@ -1,0 +1,9 @@
+package com.kh.api.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class AirController {
+
+	public static final String SERVICE_KEY = "pvNZGxOL5T9nxoTzxKaRol4Oz%2FRdVI1aW1B0Bu7BSmwrwzr%2BzLgVLT4j%2Bo%2BSFFAsdAue%2Bt%2FpcHsr8pDpR8X%2FoQ%3D%3D";
+}

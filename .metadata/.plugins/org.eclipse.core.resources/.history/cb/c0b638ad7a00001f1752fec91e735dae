@@ -1,0 +1,9 @@
+package com.kh.ajax.model.vo;
+
+public class Menu {
+
+	private int menuNo;
+	private String menuName;
+	private int price;
+	private String material;
+}

@@ -1,0 +1,6 @@
+package com.kh.Asihana.member.model.service;
+
+public class MemberServiceImpl implements MemberService {
+
+	
+}

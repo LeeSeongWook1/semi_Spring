@@ -1,0 +1,40 @@
+package com.kh.Asihana.member.controller;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.kh.Asihana.member.model.service.MemberService;
+import com.kh.Asihana.member.model.vo.Member;
+
+@Controller
+public class MemberController {
+//
+//	@Autowired
+//	private MemberService memberService;
+//	
+//	
+	/***
+	 * 로그인 폼
+	 * @return
+	 */
+	@RequestMapping("loginForm.member")
+	public String loginForm() {
+		return "member/memberLoginForm";
+	}
+	
+	/**
+	 * 회원가입 폼
+	 * @return
+	 */
+	@RequestMapping("enrollForm.member")
+	public String enrollForm() {
+		return "member/memberEnrollForm";
+	}
+	
+	
+}

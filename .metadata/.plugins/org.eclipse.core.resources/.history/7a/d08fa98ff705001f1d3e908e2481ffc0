@@ -1,0 +1,7 @@
+package com.kh.Asihana.member.model.service;
+
+public interface MemberService {
+
+	Member login(Member member);
+	
+}

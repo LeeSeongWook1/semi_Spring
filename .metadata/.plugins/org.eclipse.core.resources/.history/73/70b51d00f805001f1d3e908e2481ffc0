@@ -1,0 +1,13 @@
+package com.kh.Asihana.member.model.dao;
+
+import org.mybatis.spring.SqlSessionTemplate;
+
+import com.kh.Asihana.member.model.vo.Member;
+
+public class MemberRepository {
+
+	public Member login(SqlSessionTemplate sqlSession, Member member) {
+		return sqlSession.selectOne("memberMapper.login", member);
+	}
+
+}

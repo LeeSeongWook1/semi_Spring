@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+
+	<select id="login" parameterType="member" resultType="member">
+		SELECT
+			 MEM_NO,
+			 MEM_ID,
+			 MEM_PWD,
+			 NICKNAME,
+			 ENROLL_DATE,
+			 MODIFY_DATE,
+			 STATUS
+		FROM 
+			 MEMBER
+		WHERE
+			 	MEM_ID = ={userId}
+			 AND 
+			 	MEM_PWD = {userPwd}
+			 AND
+			 	(STATUS = 'U' OR STATUS = 'A')
+		
+	</select>
+
+	
+	<insert id="insert" parameterType="member">
+		INSERT
+		 INTO
+		 	 MEMBER
+		 	 (
+		 	 MEM_NO,
+		 	  MEM_ID,
+		 	  MEM_PWD,
+			 NICKNAME
+			 )
+		VALUES
+			(
+			SEQ_MEM.NEXTVAL,
+			#{userId},
+			#{userPwd},
+			#{nickName}
+			)
+	</insert>
+
+
+	<update id="update" parameterType="member">
+		UPDATE 
+			MEMBER
+		SET
+			 NICKNAME =#{nickName},
+			 MODIFY_DATE = SYSDATE
+		WHERE 
+				MEM_ID =#{userId}
+			AND 
+				(STATUS = 'U' OR STATUS = 'A')
+	</update>
+
+	<select id="selectId" parameterType="member" resultType="member">
+		SELECT*FROM MEMBER WHERE MEM_ID =#{userId}
+	</select>
+	
+	<select id="selectOtMember" parameterType="int" resultType="_int">
+		SELECT MEM_NO,MEM_ID,MEM_PWD,NICKNAME,ENROLL_DATE,MODIFY_DATE,STATUS
+		
+		FROM MEMBER WHERE MEM_NO =#{userNo}
+	</select>
+	
+
+	<update id="update" parameterType="member">
+		UPDATE MEMBER SET MEM_PWD =? , MODIFY_DATE = SYSDATE
+		WHERE MEM_NO =? AND MEM_PWD =? AND (STATUS = 'U' OR STATUS = 'A')
+	</update>
+
+	<update id="delete" parameterType="member">
+		UPDATE MEMBER SET STATUS ='N' WHERE MEM_PWD =#{userPwd} AND MEM_NO =#{userNo} AND (STATUS = 'U' OR STATUS = 'A')
+	</update>
+
+	<select id="idCheck" parameterType="string" resultType="_int">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEM_ID = #{checkId}
+	</select>
+	
+	<select id="userList"   resultType="member">
+		SELECT MEM_NO,NICKNAME
+		FROM MEMBER
+		WHERE STATUS = 'U'
+
+	</select> -->
+
+</mapper>

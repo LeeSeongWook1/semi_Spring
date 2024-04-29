@@ -1,0 +1,13 @@
+package com.kh.api.model.vo;
+
+public class AirVO {
+
+	private String statitonName; // 측정소명
+	private String dataTime; // 측정 일시
+	private String so2Value; // 아황산가스 농도
+	private String pm10Value; // 미세먼지 농도
+	private String o3Value; // 오존농도
+	private String khaiValue; // 통합 대기환경 수치
+	
+	
+}

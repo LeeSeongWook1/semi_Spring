@@ -1,0 +1,95 @@
+package com.kh.ajax.controller;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.google.gson.JsonArray;
+
+@Controller
+public class AjaxController {
+	
+//	
+//	/*
+//	 * 1. HttpServletResponse 객체로 응답데이터 응답하기 (Stream을 이용한 방식)
+//	 */
+//	@GetMapping("ajax1.do")
+//	public void ajaxMethod1(String menu, int price, HttpServletResponse response)throws IOException {
+//		
+////		System.out.println(menu);
+////		System.out.println(price);
+//		
+//		//요청처리 다 끝났다 ~~ 요청 할 페이지에 반환할 데이터가 있다!!
+//		String responseData ="응답데이터 : "+menu +"는" +price+"입니다.";
+//		
+//		response.setContentType("text/html; charset=UTF-8");
+//		
+//		//출력
+//		response.getWriter().print(responseData);
+//	}
+//	
+//	
+	
+
+//	/*
+//	 * 2. 응답할 데이터를 문자열로 반환
+//	 * => HttpServletResponse를 사용하지 않는 방법
+//	 * String 반환하니까 포워딩방식 -> 응답뷰의 경로로 인식을 해서 뷰 리졸버로 전달~
+//	 * 
+//	 * 따라서 내가 우너하는 String 타입의 값이 뷰의 정보가아니라 응답데이터다 > MessageConter;
+//	 *  
+//	 * 
+//	 */
+//	@GetMapping(value="ajax1.do",produces="text/html; charset=UTF-8")
+//	public String ajaxMethod1(String menu, int price) {
+//		return "응답데이터 : "+menu +"는" +price + "입니다";
+//	}
+//	
+//	// /WEB-INF/views/응답데이터 : 만두는 5000입니다..jsp
+	
+	//다수의 응답데이터가 있을 경우 ??
+//	
+//	@GetMapping("ajax1.do")
+//	public void ajaxMethod1(String menu, int price, HttpServletResponse response) throws IOException {
+//		
+////		//요청 처리를 잘 했다는 가정하에 데이터 응답
+////		response.setContentType("text/html; charset=UTF-8");
+////		response.getWriter().print(menu);
+////		response.getWriter().print(price);
+//		
+//		// 출력하는 데이터가 하나의 문자열롤 쭉 이어져있음
+//		
+//		// JSON(JavaScript Object Notation) 형태로 담아서 응답
+//		// JSONObject -> {"key":"value","key":"value"...}
+//		// JSONArray  -> ["value","value","value"]
+//		
+////		JSONArray jArr = new JSONArray();
+////		jArr.add(menu);
+////		jArr.add(price);
+////		response.setContentType("application/json; charset=UTF-8");
+////		response.getWriter().print(jArr);
+//		
+//		JSONObject jObj = new JSONObject();
+//		jObj.put("menu", menu);
+//		jObj.put("price", price);
+//		
+//		response.setContentType("application/json; charset=UTF-8");
+//		response.getWriter().print(jObj);
+//	}
+//	
+	
+	@ResponseBody
+	@GetMapping(value="ajax1.do", produces="application/json; charset=UTF-8")
+	public String ajaxMethod(String menu, int price) {
+		JSONObject jObj = new JSONObject();
+		jObj.put("menu",menu)
+		jObj.put("price",price)
+		
+		return jObj
+	}
+}

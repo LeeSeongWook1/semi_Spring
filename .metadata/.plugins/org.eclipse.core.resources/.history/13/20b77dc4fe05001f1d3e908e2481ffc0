@@ -1,0 +1,44 @@
+package com.kh.Asihana.member.model.service;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.kh.Asihana.member.model.dao.MemberRepository;
+import com.kh.Asihana.member.model.vo.Member;
+
+public class MemberServiceImpl implements MemberService {
+
+	
+	@Autowired
+	private MemberRepository memberRepository;
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	
+	@Override
+	public Member login(Member member) {
+		// TODO Auto-generated method stub
+		return memberRepository.login(sqlSession,member);
+	}
+
+	@Override
+	public int insert(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}
