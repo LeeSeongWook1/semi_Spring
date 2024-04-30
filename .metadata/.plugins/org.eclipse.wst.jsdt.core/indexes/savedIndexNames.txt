@@ -1,12 +1,5 @@
-INDEX VERSION 1.4+C:\semi-spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2798051551.index
-2579015686.index
+INDEX VERSION 1.4+C:\git-semi-spring\semi_Spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1701043976.index
 3926869090.index
 1559504237.index
-138146831.index
-138146831.index
-3167245211.index
-982568865.index
-1701043976.index
-964975717.index
-3313883032.index
+2579015686.index
